@@ -1,0 +1,249 @@
+/* Fonts */
+:root {
+  --default-font: "Roboto", sans-serif;
+  --heading-font: "Inter", sans-serif;
+  --background-color: #f0f4f8; /* Light background */
+  --default-color: #333; /* Dark text */
+  --heading-color: #0056b3; /* Dark blue headings */
+  --accent-color: #007bff; /* Bright blue accent */
+  --surface-color: #ffffff; /* White surface for cards */
+  --contrast-color: #ffffff; /* White text for contrast */
+}
+
+/* Global Styles */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* Pricing Section */
+.pricing .pricing-card {
+  height: 100%;
+  padding: 2rem;
+  background: var(--surface-color);
+  color: var(--default-color);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* For positioning the badge */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space between children */
+}
+
+.pricing .pricing-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pricing .pricing-card.popular {
+  border: 2px solid var(--accent-color); /* Add a border to highlight */
+  background: var(--surface-color); /* Keep the same background */
+  color: var(--default-color); /* Ensure text color is readable */
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5); /* Increased shadow for the border */
+}
+
+/* Popular Badge */
+.popular-badge {
+  position: absolute;
+  top: -15px; /* Adjust to position above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffcc00; /* Yellow background for the badge */
+  color: #333; /* Dark text for contrast */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Ensure it appears above the card */
+}
+
+.pricing .pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing .pricing-card .price {
+  margin-bottom: 1.5rem;
+  font-size: 2rem; /* Increase font size for better visibility */
+  font-weight: bold; /* Make the price bold */
+}
+
+.pricing .pricing-card .price .currency {
+  font-size: 1.5rem; /* Slightly larger currency symbol */
+}
+
+.pricing .pricing-card .price .amount {
+  font-size: 3rem; /* Increase the amount size for emphasis */
+  font-weight: 700; /* Make the amount bold */
+}
+
+.pricing .pricing-card .price .period {
+  font-size: 1.25rem; /* Adjust the period size */
+  color: var(--default-color); /* Keep the period color consistent */
+}
+
+.pricing .pricing-card .btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border-radius: 50px;
+}
+
+.pricing .pricing-card .btn-primary {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .pricing-card .btn-light {
+  background: var(--accent-color); /* Change to blue for consistency */
+  color: var(--contrast-color);
+}
+
+/* Toggle Switch */
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+/* FAQ Section */
+.faq .faq-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: var(--heading-color);
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: none;
+}
+
+.faq .faq-container .faq-active .faq-content {
+  display: block;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #0056b3; /* Change this to your desired color */
+  color: var(--contrast-color); /* Ensure text is readable */
+  padding: 20px 0; /* Add some padding for better spacing */
+}
+
+.footer .credits a {
+  color: var(--contrast-color); /* Ensure link color is readable */
+  text-decoration: underline; /* Optional: underline links */
+}
+
+.footer .credits a:hover {
+  color: #ffcc00; /* Change color on hover for better interaction */
+}
+
+/* Scroll Top Button */
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .pricing .pricing-card {
+      padding: 1.5rem;
+  }
+}
